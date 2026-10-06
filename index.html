@@ -324,12 +324,12 @@ function botonLeeMas(lm){
 }
 function bloqueCandado(){
   const link = CONFIG.checkoutHotmart
-    ? `<a class="boton cara" href="${CONFIG.checkoutHotmart}" target="_blank" rel="noopener">✨ Suscribirme ahora</a>`
+    ? `<a class="boton cara" href="${CONFIG.checkoutHotmart}" target="_blank" rel="noopener">✨ Suscribirme</a>`
     : `<button class="boton cara" data-accion="premium">✨ Suscribirme</button>`;
   return `<section class="candado">
     <div class="ico">🔒</div>
     <h2>Seguí acompañándote cada semana</h2>
-    <p>Tus semanas desbloqueadas terminaron. Suscribite para ver todo el contenido de cada semana, la Biblioteca completa y las semanas anteriores.</p>
+    <p>Tus semanas gratis terminaron. Suscribite para ver todo el contenido de cada semana, la Biblioteca completa y las semanas anteriores.</p>
     <div class="pila">${link}
       <button class="boton sec" data-accion="premium">Ya me suscribí</button></div>
   </section>`;
@@ -372,7 +372,7 @@ function vistaBienvenida(){
         <input type="date" id="fecha" required></label>
       <p class="mensaje error oculto" id="error-inicio"></p>
       <button class="boton" type="submit">Empezar 💛</button>
-      <p class="aviso">Tenés ${Math.round(CONFIG.diasGratis/7)} semanas desbloqueadas para conocer la app.</p>
+      <p class="aviso">Tenés ${Math.round(CONFIG.diasGratis/7)} semanas gratis para conocer la app.</p>
     </form>
   </section>`;
   if (estado._nombreTmp) document.getElementById("nombre").value = estado._nombreTmp;
@@ -424,7 +424,7 @@ function vistaSemana(){
   if (!mirandoOtra){
     html += `<div class="progreso"><div class="progreso-barra"><div style="width:${porcentaje}%"></div></div>
       <div class="progreso-info"><span>${trimestre(n)}</span><span>${restantes > 0 ? "Faltan " + restantes + " días" : "¡Llegó tu fecha!"}</span></div></div>`;
-    if (enPrueba() && !estado.premium) html += `<p class="aviso" style="margin-top:6px"><span class="etiqueta cara">Te quedan ${diasGratisRestantes()} días desbloqueados</span></p>`;
+    if (enPrueba() && !estado.premium) html += `<p class="aviso" style="margin-top:6px"><span class="etiqueta cara">Te quedan ${diasGratisRestantes()} días gratis</span></p>`;
   }
 
   if (acceso){
@@ -608,11 +608,11 @@ function hojaBuscar(){
 function hojaPremium(){
   const premium = estado.premium === true;
   const pagar = CONFIG.checkoutHotmart
-    ? `<a class="boton cara" href="${CONFIG.checkoutHotmart}" target="_blank" rel="noopener">✨ Suscribirme ahora</a>` : "";
+    ? `<a class="boton cara" href="${CONFIG.checkoutHotmart}" target="_blank" rel="noopener">✨ Suscribirme</a>` : "";
   hoja(`<h2>👑 Mi suscripción</h2>
     ${premium ? `<p>Tu suscripción está activa con el correo <b>${esc(estado.emailPremium)}</b>. ¡Gracias! 💛</p>`
       : enPrueba() ? `<p>Te quedan <b>${diasGratisRestantes()} días gratis</b>. Después, con la suscripción vas a seguir recibiendo todo el contenido de cada semana.</p>`
-      : `<p>Tus semanas desbloqueadas terminaron. Con la suscripción ves el contenido completo de cada semana, la Biblioteca y las semanas anteriores.</p>`}
+      : `<p>Tus semanas gratis terminaron. Con la suscripción ves el contenido completo de cada semana, la Biblioteca y las semanas anteriores.</p>`}
     ${premium ? "" : pagar}
     <h2 style="font-size:1.05rem;margin-top:18px">¿Ya te suscribiste?</h2>
     <p>Ingresá el correo con el que pagaste en Hotmart.</p>
