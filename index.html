@@ -8,14 +8,20 @@
 
 <style>
 :root{
-  --rose:#8aaeb5;
-  --rose-dark:#5d8790;
-  --rose-soft:#eef6f7;
-  --cream:#fcfaf5;
-  --wine:#405b61;
-  --text:#39484b;
-  --muted:#68777a;
-  --gold:#c6a46a;
+  --rose:#d8a9b5;
+  --rose-dark:#9b6877;
+  --rose-soft:#fbf0f2;
+  --aqua:#cfe9e2;
+  --aqua-dark:#78a99e;
+  --yellow:#f7edc9;
+  --yellow-dark:#b79d54;
+  --blue:#d7e8ef;
+  --blue-dark:#7899a8;
+  --cream:#fffdf7;
+  --wine:#53665f;
+  --text:#44514e;
+  --muted:#71807b;
+  --gold:#d5b96d;
   --white:#fff;
   --shadow:0 18px 50px rgba(91,36,55,.12);
   --radius:28px;
@@ -56,9 +62,11 @@ header{
 .hero{
   position:relative;overflow:hidden;
   background:
-   radial-gradient(circle at 85% 25%,rgba(255,214,225,.9),transparent 32%),
-   radial-gradient(circle at 10% 80%,rgba(250,228,199,.7),transparent 30%),
-   linear-gradient(135deg,#fffaf7 0%,#f1f7f7 55%,#edf4f3 100%);
+   radial-gradient(ellipse 38% 28% at 8% 12%, rgba(207,233,226,.75), transparent 70%),
+   radial-gradient(ellipse 35% 30% at 91% 18%, rgba(247,237,201,.78), transparent 70%),
+   radial-gradient(ellipse 28% 35% at 86% 88%, rgba(216,169,181,.28), transparent 72%),
+   radial-gradient(ellipse 30% 28% at 15% 92%, rgba(215,232,239,.62), transparent 70%),
+   #fffdf7;
   padding:76px 0 85px;
 }
 .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:55px}
@@ -79,6 +87,11 @@ header{
 .free-trial span{font-size:13px;color:var(--muted)}
 
 .hero-visual{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center}
+.hero-visual:before,.hero-visual:after{
+  content:"";position:absolute;border-radius:50% 44% 56% 48%;filter:blur(.5px)
+}
+.hero-visual:before{width:280px;height:230px;background:rgba(207,233,226,.62);left:3%;top:12%;transform:rotate(-16deg)}
+.hero-visual:after{width:210px;height:175px;background:rgba(247,237,201,.65);right:0;bottom:8%;transform:rotate(21deg)}
 .bubble{
   position:absolute;background:white;padding:13px 17px;border-radius:18px;
   box-shadow:var(--shadow);font-weight:800;font-size:13px;z-index:3;
@@ -108,11 +121,59 @@ header{
 }
 .mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .mini div{background:#f0f6f5;border-radius:14px;padding:10px;font-size:10px;font-weight:800;color:#765d65}
-.section{padding:85px 0}
+.section{padding:85px 0;position:relative;overflow:hidden}
+.section:before,.section:after{
+  content:"";position:absolute;z-index:0;pointer-events:none;filter:blur(1px);
+  border-radius:48% 52% 55% 45% / 52% 42% 58% 48%;
+}
+.section:before{
+  width:270px;height:180px;left:-95px;top:35px;
+  background:rgba(207,233,226,.38);transform:rotate(-18deg);
+}
+.section:after{
+  width:220px;height:170px;right:-80px;bottom:15px;
+  background:rgba(247,237,201,.42);transform:rotate(24deg);
+}
+.section > .container{position:relative;z-index:1}
 .section-head{text-align:center;max-width:760px;margin:0 auto 48px}
 .section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.1;color:var(--wine);margin:13px 0}
 .section-head p{font-size:18px;color:var(--muted)}
-.pain{background:white}
+.pain{background:#fffefa}
+.curiosity{
+  position:relative;overflow:hidden;padding:88px 0;
+  background:
+    radial-gradient(ellipse 30% 45% at 8% 30%,rgba(207,233,226,.52),transparent 70%),
+    radial-gradient(ellipse 30% 35% at 92% 78%,rgba(247,237,201,.58),transparent 70%),
+    #fffdf7;
+}
+.curiosity:before{
+  content:"";position:absolute;width:280px;height:180px;right:4%;top:-80px;
+  background:rgba(216,169,181,.20);border-radius:50% 45% 55% 48%;transform:rotate(20deg);
+}
+.curiosity-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center;position:relative;z-index:1}
+.curiosity-art{min-height:390px;position:relative;display:flex;align-items:center;justify-content:center}
+.art-blob{position:absolute;border-radius:50% 45% 55% 48%;filter:blur(.2px)}
+.art-blob.aqua{width:270px;height:210px;background:rgba(207,233,226,.78);transform:rotate(-18deg);left:8%;top:16%}
+.art-blob.yellow{width:220px;height:175px;background:rgba(247,237,201,.78);transform:rotate(25deg);right:2%;bottom:9%}
+.art-blob.pink{width:145px;height:115px;background:rgba(216,169,181,.38);left:10%;bottom:7%;transform:rotate(14deg)}
+.art-blob.blue{width:145px;height:115px;background:rgba(215,232,239,.66);right:12%;top:5%;transform:rotate(-20deg)}
+.belly{
+  position:relative;z-index:2;width:245px;height:245px;border-radius:50%;
+  background:rgba(255,253,247,.86);border:9px solid rgba(255,255,255,.8);
+  box-shadow:0 22px 50px rgba(83,102,95,.14);
+  display:flex;align-items:center;justify-content:center;font-size:100px;
+}
+.belly span{position:absolute;font-size:48px;right:37px;bottom:50px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.08))}
+.curiosity-tag{
+  position:absolute;z-index:4;background:white;padding:11px 16px;border-radius:16px;
+  box-shadow:0 10px 25px rgba(83,102,95,.13);font-size:13px;font-weight:900;color:var(--wine)
+}
+.tag-one{top:8%;left:2%}.tag-two{right:0;bottom:14%}
+.curiosity-copy h2{font-size:clamp(34px,4vw,51px);line-height:1.08;color:var(--wine);margin:15px 0 18px}
+.curiosity-copy p{font-size:18px;color:var(--muted);margin-bottom:14px}
+.curiosity-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.curiosity-points span{padding:11px 14px;border-radius:999px;background:white;border:1px solid #e5ece7;font-size:13px;font-weight:800;color:var(--wine)}
+
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pain-card{
   background:#fdfcf8;border:1px solid #e2ebeb;border-radius:var(--radius);padding:28px;
@@ -123,8 +184,18 @@ header{
 .pain-card h3{font-size:20px;color:var(--wine);margin-bottom:8px}
 .pain-card p{color:var(--muted);font-size:15px}
 .bridge{
-  background:linear-gradient(135deg,var(--wine),#7d304c);color:white;padding:75px 0;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 35% 70% at 5% 50%,rgba(207,233,226,.55),transparent 70%),
+    radial-gradient(ellipse 35% 65% at 95% 15%,rgba(247,237,201,.60),transparent 70%),
+    linear-gradient(135deg,#6f8e88,#5b756f);
+  color:white;padding:75px 0;
 }
+.bridge:before{
+  content:"";position:absolute;width:330px;height:220px;right:18%;bottom:-120px;
+  background:rgba(216,169,181,.25);border-radius:52% 48% 44% 56%;transform:rotate(-15deg);
+}
+.bridge > .container{position:relative;z-index:1}
 .bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
 .bridge h2{font-size:clamp(34px,4vw,52px);line-height:1.08;margin-bottom:18px}
 .bridge p{font-size:18px;color:#f9e8ed}
@@ -185,6 +256,8 @@ footer strong{color:white}
  background:var(--rose);color:#fff;font-weight:900;box-shadow:0 12px 30px rgba(216,91,120,.4)
 }
 @media(max-width:850px){
+ .curiosity-grid{grid-template-columns:1fr;gap:35px}
+ .curiosity-art{min-height:330px}
  .nav a:not(.btn){display:none}
  .hero{padding:48px 0 60px}.hero-grid,.bridge-grid,.post-grid{grid-template-columns:1fr}
  .hero-visual{min-height:460px;margin-top:15px}.phone{width:255px;height:490px}
@@ -274,6 +347,31 @@ footer strong{color:white}
     <p>Controles, síntomas, cambios físicos, emociones, preparación para el nacimiento y luego… las primeras semanas como mamá.</p>
    </article>
   </div>
+ </div>
+</section>
+
+<section class="curiosity">
+ <div class="container curiosity-grid">
+   <div class="curiosity-art">
+     <div class="art-blob aqua"></div>
+     <div class="art-blob yellow"></div>
+     <div class="art-blob pink"></div>
+     <div class="art-blob blue"></div>
+     <div class="belly">🤰<span>👶</span></div>
+     <div class="curiosity-tag tag-one">Semana a semana</div>
+     <div class="curiosity-tag tag-two">Desde adentro</div>
+   </div>
+   <div class="curiosity-copy">
+     <span class="badge">LA CURIOSIDAD TAMBIÉN ES PARTE DEL EMBARAZO</span>
+     <h2>¿No te da una curiosidad enorme saber cómo está creciendo tu bebé ahí adentro?</h2>
+     <p>Hay algo mágico en poder imaginar qué está haciendo, cuánto está creciendo y cómo va cambiando semana tras semana, mientras vos todavía no podés verlo con tus propios ojos.</p>
+     <p><strong>La aplicación convierte esa curiosidad en un pequeño momento de descubrimiento cada semana.</strong> Entrás, descubrís qué está pasando con tu bebé y también qué cambios pueden estar ocurriendo en vos.</p>
+     <div class="curiosity-points">
+       <span>👶 Descubrí su evolución</span>
+       <span>📏 Conocé sus cambios</span>
+       <span>💗 Entendé tu cuerpo</span>
+     </div>
+   </div>
  </div>
 </section>
 
