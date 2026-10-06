@@ -8,14 +8,14 @@
 
 <style>
 :root{
-  --rose:#d85b78;
-  --rose-dark:#b83f5d;
-  --rose-soft:#fff0f4;
-  --cream:#fffaf7;
-  --wine:#5b2437;
-  --text:#382b30;
-  --muted:#75666c;
-  --gold:#d9a45b;
+  --rose:#8aaeb5;
+  --rose-dark:#5d8790;
+  --rose-soft:#eef6f7;
+  --cream:#fcfaf5;
+  --wine:#405b61;
+  --text:#39484b;
+  --muted:#68777a;
+  --gold:#c6a46a;
   --white:#fff;
   --shadow:0 18px 50px rgba(91,36,55,.12);
   --radius:28px;
@@ -40,13 +40,13 @@ a{text-decoration:none;color:inherit}
 .btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(216,91,120,.35)}
 .btn-light{background:white;color:var(--rose-dark);box-shadow:0 10px 25px rgba(0,0,0,.12)}
 .badge{
-  display:inline-block;background:#fff;border:1px solid #f3d5de;color:var(--rose-dark);
+  display:inline-block;background:#fff;border:1px solid #dce8e9;color:var(--rose-dark);
   padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800;
   letter-spacing:.3px;
 }
 header{
   position:sticky;top:0;z-index:20;background:rgba(255,250,247,.92);
-  backdrop-filter:blur(12px);border-bottom:1px solid #f1e2e5;
+  backdrop-filter:blur(12px);border-bottom:1px solid #e3ebea;
 }
 .nav{height:70px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:22px;font-weight:900;color:var(--wine)}
@@ -58,7 +58,7 @@ header{
   background:
    radial-gradient(circle at 85% 25%,rgba(255,214,225,.9),transparent 32%),
    radial-gradient(circle at 10% 80%,rgba(250,228,199,.7),transparent 30%),
-   linear-gradient(135deg,#fffaf7 0%,#fff2f5 55%,#fce7ed 100%);
+   linear-gradient(135deg,#fffaf7 0%,#f1f7f7 55%,#edf4f3 100%);
   padding:76px 0 85px;
 }
 .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:55px}
@@ -68,7 +68,16 @@ header{
 }
 .hero h1 span{color:var(--rose)}
 .hero p.lead{font-size:20px;line-height:1.55;color:#66565d;max-width:620px;margin-bottom:28px}
-.hero-note{font-size:13px;color:#8a737b;margin-top:15px}
+.hero-note{font-size:13px;color:#708084;margin-top:15px}
+.free-trial{
+  display:inline-block;margin:0 0 24px;padding:13px 18px;border-radius:17px;
+  background:linear-gradient(135deg,#edf6f6,#f8f4e9);
+  border:1px solid #d7e6e6;color:var(--wine);
+  box-shadow:0 8px 22px rgba(64,91,97,.08);
+}
+.free-trial strong{font-size:15px;color:var(--rose-dark);letter-spacing:.3px}
+.free-trial span{font-size:13px;color:var(--muted)}
+
 .hero-visual{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center}
 .bubble{
   position:absolute;background:white;padding:13px 17px;border-radius:18px;
@@ -76,10 +85,10 @@ header{
 }
 .b1{top:8%;left:1%}.b2{top:35%;right:-3%}.b3{bottom:12%;left:3%}
 .phone{
-  width:290px;height:555px;background:#21151a;border:9px solid #21151a;border-radius:42px;
+  width:290px;height:555px;background:#273b3f;border:9px solid #273b3f;border-radius:42px;
   box-shadow:0 35px 65px rgba(77,30,47,.28);overflow:hidden;position:relative;z-index:2;
 }
-.phone:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:105px;height:24px;background:#21151a;border-radius:0 0 16px 16px;z-index:5}
+.phone:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:105px;height:24px;background:#273b3f;border-radius:0 0 16px 16px;z-index:5}
 .screen{
   height:100%;padding:42px 17px 18px;
   background:linear-gradient(180deg,#fff7f8,#fde9ee);
@@ -93,12 +102,12 @@ header{
 .week-card h3{font-size:23px;color:var(--wine);margin:4px 0}
 .baby-circle{
   width:125px;height:125px;border-radius:50%;margin:18px auto;
-  background:radial-gradient(circle at 40% 35%,#f8c7d4,#e48ba4 55%,#c85c79);
+  background:radial-gradient(circle at 40% 35%,#c8dfe2,#91b8bf 55%,#67949c);
   display:flex;align-items:center;justify-content:center;font-size:55px;
   box-shadow:inset 0 0 0 10px rgba(255,255,255,.45);
 }
 .mini{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mini div{background:#fff5f7;border-radius:14px;padding:10px;font-size:10px;font-weight:800;color:#765d65}
+.mini div{background:#f0f6f5;border-radius:14px;padding:10px;font-size:10px;font-weight:800;color:#765d65}
 .section{padding:85px 0}
 .section-head{text-align:center;max-width:760px;margin:0 auto 48px}
 .section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.1;color:var(--wine);margin:13px 0}
@@ -106,7 +115,7 @@ header{
 .pain{background:white}
 .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pain-card{
-  background:#fffafa;border:1px solid #f5e2e7;border-radius:var(--radius);padding:28px;
+  background:#fdfcf8;border:1px solid #e2ebeb;border-radius:var(--radius);padding:28px;
   position:relative;overflow:hidden;
 }
 .pain-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--rose),#eeb1bf)}
@@ -127,7 +136,7 @@ header{
 .features{background:var(--cream)}
 .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .feature{
-  display:flex;gap:17px;background:white;border:1px solid #f1e2e5;padding:24px;border-radius:23px;
+  display:flex;gap:17px;background:white;border:1px solid #e3ebea;padding:24px;border-radius:23px;
   box-shadow:0 7px 20px rgba(91,36,55,.04);
 }
 .feature-icon{
@@ -140,15 +149,15 @@ header{
 .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .stage{
   border-radius:24px;padding:27px 22px;min-height:230px;
-  background:linear-gradient(180deg,#fff5f7,#fff);
-  border:1px solid #f3dce2;
+  background:linear-gradient(180deg,#f0f6f5,#fff);
+  border:1px solid #dfe9e9;
 }
 .stage .num{font-size:13px;font-weight:900;color:var(--rose)}
 .stage h3{font-size:22px;color:var(--wine);margin:8px 0}
 .stage p{font-size:14px;color:var(--muted)}
 .stage strong{display:block;margin-top:16px;color:var(--rose-dark);font-size:13px}
 .postpartum{
-  background:linear-gradient(135deg,#fff3ed,#fff8f4);
+  background:linear-gradient(135deg,#f5f1e8,#fcfaf5);
 }
 .post-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}
 .post-box{
@@ -156,7 +165,7 @@ header{
 }
 .post-box h3{font-size:27px;color:var(--wine);margin-bottom:15px}
 .post-list{display:grid;gap:13px}
-.post-list div{padding:13px 15px;background:#fff5f7;border-radius:14px;font-weight:700;color:#634d55}
+.post-list div{padding:13px 15px;background:#f0f6f5;border-radius:14px;font-weight:700;color:#634d55}
 .quote{
   background:var(--rose-soft);padding:75px 0;text-align:center;
 }
@@ -164,12 +173,12 @@ header{
 .quote p{margin-top:18px;color:var(--muted)}
 .cta{
   padding:95px 0;text-align:center;
-  background:linear-gradient(135deg,#f6d6df,#fff2f5);
+  background:linear-gradient(135deg,#dfecef,#f1f7f7);
 }
 .cta h2{font-size:clamp(38px,5vw,60px);line-height:1.05;color:var(--wine);margin:14px auto 18px;max-width:850px}
 .cta p{font-size:19px;color:var(--muted);max-width:700px;margin:0 auto 28px}
 .disclaimer{font-size:12px!important;max-width:760px!important;margin:25px auto 0!important;color:#8b777e!important}
-footer{background:#321a24;color:#ecdfe3;padding:35px 0;text-align:center;font-size:13px}
+footer{background:#30464a;color:#dbe4e5;padding:35px 0;text-align:center;font-size:13px}
 footer strong{color:white}
 .float-btn{
  position:fixed;right:20px;bottom:20px;z-index:30;padding:15px 21px;border-radius:999px;
@@ -208,9 +217,10 @@ footer strong{color:white}
 <section class="hero">
  <div class="container hero-grid">
   <div>
-   <span class="badge">🤰 Tu embarazo, semana a semana</span>
+   <span class="badge">🤍 Tu embarazo, semana a semana</span>
    <h1>¿Querés saber <span>qué está pasando</span> dentro de tu panza?</h1>
    <p class="lead">Porque durante el embarazo aparecen mil preguntas, cambios que no esperabas y momentos en los que necesitás entender qué te está pasando.</p>
+   <div class="free-trial"><strong>✨ 4 SEMANAS GRATIS</strong><br><span>Probá la aplicación y descubrí todo lo que puede acompañarte durante tu embarazo.</span></div>
    <p class="lead"><strong>Crecer en la Panza</strong> te acompaña semana a semana para que sepas cómo está creciendo tu bebé, qué cambios podés experimentar vos y qué temas son importantes en cada etapa.</p>
    <a href="#acceso" class="btn">Quiero vivir mi embarazo acompañada →</a>
    <div class="hero-note">Información orientativa para acompañar tu experiencia. No reemplaza el seguimiento de tu profesional de salud.</div>
@@ -226,7 +236,7 @@ footer strong{color:white}
       <div class="week-card">
         <small>ESTA SEMANA</small>
         <h3>Semana 24</h3>
-        <div class="baby-circle">👶</div>
+        <div class="baby-circle">🧸</div>
         <div class="mini">
           <div>💗 Tu bebé<br>crece y cambia</div>
           <div>🌸 Tu cuerpo<br>también cambia</div>
@@ -274,7 +284,7 @@ footer strong{color:white}
    <h2>No necesitás saberlo todo de una vez.</h2>
    <p>Solo necesitás saber qué está pasando <strong>ahora</strong>. La aplicación se adapta al avance de tu embarazo y te muestra contenidos relacionados con la etapa en la que estás.</p>
    <br>
-   <a href="#acceso" class="btn btn-light">Quiero conocer mi semana →</a>
+   <a href="#acceso" class="btn btn-light">Probar 4 semanas gratis →</a>
   </div>
   <div class="bridge-list">
    <div>👶 Cómo evoluciona tu bebé esta semana</div>
@@ -354,7 +364,8 @@ footer strong{color:white}
   <span class="badge">TU EMBARAZO MERECE SER VIVIDO CON MÁS CALMA</span>
   <h2>Dejá de buscar semana por semana. Empezá a vivirla.</h2>
   <p>Tené en tu celular una experiencia que te acompaña a medida que avanza tu embarazo, desde el desarrollo de tu bebé hasta las primeras dos semanas después del parto.</p>
-  <a class="btn" href="https://silvi-aura.github.io/En-la-panza-APP/">Quiero entrar a Crecer en la Panza →</a>
+  <div class="free-trial" style="margin:0 auto 24px;background:rgba(255,255,255,.72);"><strong>✨ EMPEZÁ CON 4 SEMANAS GRATIS</strong><br><span>Conocé la aplicación antes de decidir si querés continuar.</span></div>
+  <a class="btn" href="https://silvi-aura.github.io/En-la-panza-APP/">Quiero probarla gratis →</a>
   <p class="disclaimer"><strong>Importante:</strong> Crecer en la Panza ofrece información general y educativa. No diagnostica enfermedades, no sustituye controles prenatales ni la indicación de un obstetra, partera u otro profesional de salud. Ante síntomas preocupantes o una emergencia, consultá inmediatamente con tu profesional o servicio de salud.</p>
  </div>
 </section>
@@ -364,6 +375,6 @@ footer strong{color:white}
  <div class="container"><strong>Crecer en la Panza</strong> · Acompañamiento semana a semana durante el embarazo y las primeras semanas después del parto.</div>
 </footer>
 
-<a class="float-btn" href="#acceso">💗 Quiero acompañarme</a>
+<a class="float-btn" href="#acceso">✨ 4 semanas gratis</a>
 </body>
 </html>
